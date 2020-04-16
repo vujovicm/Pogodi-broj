@@ -1,3 +1,2 @@
-# Test
-Probni repository
-Evo ja sam nesto promenio:)
+# Pogodi broj
+Igra pogadjanja zamisljenog broja
