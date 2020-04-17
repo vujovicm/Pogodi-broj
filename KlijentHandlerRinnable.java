@@ -43,7 +43,7 @@ public class KlijentHandlerRinnable implements Runnable {
                     if(pokusaj.equalsIgnoreCase("kraj"))
                         break;
                     int pokusaj_parsovan_u_int=Integer.parseInt(pokusaj);
-                    
+
                         if(pokusaj_parsovan_u_int != zamisljen_broj){
                             out.write("Promasaj!");
                             out.newLine();
