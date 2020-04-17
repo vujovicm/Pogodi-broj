@@ -30,12 +30,10 @@ public class Klijent {
             System.out.println(pocetak_igre);
 
             System.out.println("Krecem da pogadjam!");
-            int m=s.nextInt();
-            bw.write(Integer.toString(m));
+            int prvi_pokusaj=s.nextInt();
+            bw.write(Integer.toString(prvi_pokusaj));
             bw.newLine();
             bw.flush();
-
-            //System.out.println("poslao sam");
 
             int pokusaj;
             String poruka=br.readLine();
@@ -48,11 +46,11 @@ public class Klijent {
                     bw.write(Integer.toString(pokusaj));
                     bw.newLine();
                     bw.flush();
-                    //System.out.println("poslao sam");
                     poruka=br.readLine();
 
                 }
                 else {
+                    System.out.println(poruka);
                     pogodak = true;
                     bw.write("kraj");
                     bw.newLine();
