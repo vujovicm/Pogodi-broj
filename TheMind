@@ -1,0 +1,94 @@
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
+//OVO ZA POCETAK TREBA DA IMA 3 KVADRATICA, KOJI KASNIJE TREBA DA POSTANU KARTE, I DA ZA SVAKI OD NJIH BUDE
+//VEZAN 1 BROJ (To jos nije uradjeno...). HTEO SAM PRVO DA MOGU DA KLIKNEM NA TE KVADRATICE I DA KAO POBEDIM
+// AKO KLIKNEM NA NEKI.
+//PROBLEM JE STO MI SE WINNER NE MENJA NA KLIK KVADRATA
+//https://www.youtube.com/watch?v=lJp0zXbIAnk OVO JE IXS OKS ONAJ STO SAM PRICAO
+public class TheMind extends JPanel {
+    Color lightgreen = new Color(150,223,193);
+    int [] board  = new int[3];
+    int winner = 0;
+    int x;
+    int y;
+    Random random = new Random();
+    int a = random.nextInt(101);
+    int b = random.nextInt(101);
+    int c = random.nextInt(101);
+  //OVO SAM ZABO KAKO IDE SINTAKSNO...
+   /* board[0] = a;
+    board[1] = b;
+    board[2] = c;*/
+    public TheMind(){
+
+        setBackground(lightgreen);
+        setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
+        addMouseListener(new TheMind.XOListener());
+
+    }
+    private class XOListener implements MouseListener{
+        public void mousePressed(MouseEvent event){}
+        public void mouseReleased(MouseEvent event){}
+        public void mouseEntered(MouseEvent event){}
+        public void mouseExited(MouseEvent event){}
+
+        public void mouseClicked(MouseEvent event){
+            int a = event.getX();
+            int b = event.getY();
+
+                //Prvi kvadrat
+            if(a>400 && a<600 && y>500)
+                winner++;
+
+
+        }
+
+
+    }
+    public void paintComponent(Graphics page) {
+        super.paintComponent(page); //must have this line for the panel to update/call itself
+        int i=5;
+        int j=5;
+        int width=5;
+        int height=200;
+        int xpos=300;
+        int ypos=0;
+        //page.drawImage(image, 0, 0, this);
+        page.fillRoundRect(xpos + 100,500,width,height,5,5);
+        page.fillRoundRect(xpos + 300,500,width,height,5,5);
+        page.fillRoundRect(xpos + 500,500,width,height,5,5);
+        page.fillRoundRect(xpos + 700,500,width,height,5,5);
+        page.fillRoundRect(xpos + 100,ypos + 500,height + 400,width,5,5);
+        if(checkwin() == 1)
+            page.drawString("Pobeda",330,600);
+        if(checkwin() == -1)
+            page.drawString("Poraz",330, 600);
+
+    }
+    public int checkwin(){
+        return winner;
+    }
+
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("TheMind");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        Dimension DimMax = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setMaximumSize(DimMax);
+        //frame.setPreferredSize(new Dimension(300,300));
+
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.getContentPane().add(new TheMind());
+        frame.pack();
+        frame.setVisible(true);
+
+    }
+
+}
