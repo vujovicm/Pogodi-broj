@@ -1,2 +1,2 @@
-# Pogodi broj
-Igra pogadjanja zamisljenog broja
+# Projekat iz predmeta Racunarske mreze
+
