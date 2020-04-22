@@ -13,7 +13,8 @@ public class Igra {
     private JButton a2Button;
     private JLabel label;
     private JPanel panel;
-
+    private JLabel label2;
+   
     public Igra() {
         Random random= new Random();
         int a=random.nextInt(101);
