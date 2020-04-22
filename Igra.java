@@ -34,7 +34,7 @@ public class Igra {
                 a1Button.setEnabled(false);
 
                 if(!a1Button.isEnabled() && !a2Button.isEnabled() && !a3Button.isEnabled())
-                    label2.setText("Sve je pritinsuto!");
+                    label2.setText("Sve je pritisnuto!");
             }
         });
         a2Button.addActionListener(new ActionListener() {
@@ -45,7 +45,7 @@ public class Igra {
                 a2Button.setEnabled(false);
 
                 if(!a1Button.isEnabled() && !a2Button.isEnabled() && !a3Button.isEnabled())
-                    label2.setText("Sve je pritinsuto!");
+                    label2.setText("Sve je pritisnuto!");
             }
         });
 
@@ -58,7 +58,7 @@ public class Igra {
                 a3Button.setEnabled(false);
 
                 if(!a1Button.isEnabled() && !a2Button.isEnabled() && !a3Button.isEnabled())
-                    label2.setText("Sve je pritinsuto!");
+                    label2.setText("Sve je pritisnuto!");
             }
         });
 
